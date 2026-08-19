@@ -1,0 +1,15 @@
+[Unit]
+Description=ModernWMS Touch Web TUI Service
+After=network.target docker.service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /root/scripts/start_webtui.sh
+
+WorkingDirectory=/root
+Restart=always
+RestartSec=3
+User=root
+
+[Install]
+WantedBy=multi-user.target

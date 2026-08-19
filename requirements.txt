@@ -1,0 +1,12 @@
+# Core Runtime Dependencies (Python 3.10+)
+# All core CLI, Gateway, and Sync tools run using the Python standard library
+# (sqlite3, socket, select, pty, tty, termios, threading, http.server, subprocess, hashlib, secrets)
+
+# Recommended for extended development & testing
+requests>=2.31.0
+urllib3>=2.0.0
+pydantic>=2.0.0
+
+# Framework options for building new unified API & frontend
+fastapi>=0.110.0
+uvicorn>=0.28.0

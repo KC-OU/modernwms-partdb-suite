@@ -1,0 +1,17 @@
+[Unit]
+Description=PartDB to ModernWMS Synchronization API & Daemon
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/partdb_modernwms_sync
+ExecStart=/usr/bin/python3 /root/partdb_modernwms_sync/sync_service.py 8082
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

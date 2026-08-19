@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  partdb-sync:
+    build: .
+    container_name: partdb-sync
+    restart: always
+    ports:
+      - "8082:8082"
+    volumes:
+      - /root/docker-server/partdb/db:/app/partdb_db:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./config:/app/config
+      - ./sync_service.py:/app/sync_service.py:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PARTDB_DB_PATH=/app/partdb_db/app.db
+      - MODERNWMS_CONTAINER=modernwms
+      - HOST_IP=187.124.212.150
+      - PORT=8082
+      - PARTDB_URL=https://partdb.kierancollins.xyz/en/
+      - MODERNWMS_URL=https://modernwms.kierancollins.xyz/
+      - OVERVIEW_URL=https://overview.kierancollins.xyz/
+      - GRAFANA_URL=https://grafana.kierancollins.xyz/
+      - CREDENTIALS_FILE=/app/config/credentials.json

@@ -1,0 +1,35 @@
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Database Files & Backups (Contain Live Runtime Data)
+*.db
+*.sqlite
+*.sqlite3
+backups/
+/deploy/docker/partdb/db/
+/services/sync-service/config/sync_history.db
+
+# Logs & Runtime State
+*.log
+tui_audit.log
+virt-sysprep-firstboot.log
+webtui.log
+.DS_Store
+
+# Secrets & Live Credentials
+.env
+credentials.json
+/services/sync-service/config/credentials.json
+
+# Build Artifacts
+build/
+dist/
+*.egg-info/
+/apps/mobile/apk_build_workspace/
